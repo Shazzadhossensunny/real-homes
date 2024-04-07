@@ -22,7 +22,7 @@
       "parking": "Garage and Driveway",
       "waterfront": "Yes",
       "waterfront_description": "Direct beach access",
-      "pests": "Regular pest control maintained"
+      "pets": "Allowed"
     }
   },
   {
@@ -47,8 +47,8 @@
       "view": "City",
       "parking": "Street Parking",
       "waterfront": "No",
-      "waterfront_description": "",
-      "pests": "Regular pest control maintained"
+      "waterfront_description": "Intracoastal Front,Ocean Access",
+      "pets": "Allowed"
     }
   },
   {
@@ -73,8 +73,8 @@
       "view": "Neighborhood",
       "parking": "Attached Garage",
       "waterfront": "No",
-      "waterfront_description": "",
-      "pests": "Regular pest control maintained"
+      "waterfront_description": "Intracoastal Front,Ocean Access",
+      "pets": "Allowed"
     }
   },
   {
@@ -99,8 +99,8 @@
       "view": "Scenic Countryside",
       "parking": "Driveway",
       "waterfront": "No",
-      "waterfront_description": "",
-      "pests": "Regular pest control maintained"
+      "waterfront_description": "Intracoastal Front,Ocean Access",
+      "pets": "Allowed"
     }
   },
   {
@@ -125,8 +125,8 @@
       "view": "City Skyline",
       "parking": "Underground Garage",
       "waterfront": "No",
-      "waterfront_description": "",
-      "pests": "Regular pest control maintained"
+      "waterfront_description": "Intracoastal Front,Ocean Access",
+      "pets": "Allowed"
     }
   },
   {
@@ -151,8 +151,8 @@
       "view": "Community",
       "parking": "Attached Garage",
       "waterfront": "No",
-      "waterfront_description": "",
-      "pests": "Regular pest control maintained"
+      "waterfront_description": "Intracoastal Front,Ocean Access",
+      "pets": "Allowed"
     }
   }
 ]
