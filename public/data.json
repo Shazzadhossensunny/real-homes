@@ -2,7 +2,8 @@
   {
     "image": "https://i.ibb.co/ssScB4C/property-2-488x326.jpg",
     "estate_title": "Luxury Villa with Ocean View",
-    "id": "001",
+    "id": 1,
+    "property_id": "VL001",
     "segment_name": "Villa",
     "description": "Experience luxury living in this stunning villa overlooking the ocean. Features include spacious living areas, private pool, and landscaped gardens.",
     "price": "$1,500,000",
@@ -27,7 +28,8 @@
   {
     "image": "https://i.ibb.co/yXrGPNR/Apartment-488x326.jpg",
     "estate_title": "Modern Downtown Apartment",
-    "id": "002",
+    "id": 2,
+    "property_id": "AP002",
     "segment_name": "Apartment",
     "description": "Enjoy urban living in this sleek and modern apartment located in the heart of downtown. Close to amenities, restaurants, and nightlife.",
     "price": "$3,000/month",
@@ -52,7 +54,8 @@
   {
     "image": "https://i.ibb.co/T27X6QQ/architecture-home-merrick-way-488x326.jpg",
     "estate_title": "Family-Friendly Suburban Home",
-    "id": "003",
+    "id": 3,
+    "property_id": "SH003",
     "segment_name": "Suburban Home",
     "description": "Ideal for families, this spacious suburban home offers multiple bedrooms, a backyard with a play area, and proximity to schools and parks.",
     "price": "$600,000",
@@ -75,9 +78,10 @@
     }
   },
   {
-    "image": "image_url_4.jpg",
-    "estate_title": "https://i.ibb.co/YL4Mvsb/cottege.jpg",
-    "id": "004",
+    "image": "https://i.ibb.co/YL4Mvsb/cottege.jpg",
+    "estate_title": "Charming Cottage in the Countryside",
+    "id": 4,
+    "property_id": "CT004",
     "segment_name": "Cottage",
     "description": "Escape to the countryside in this quaint and charming cottage. Perfect for weekend getaways or as a vacation home.",
     "price": "$250,000",
@@ -100,9 +104,10 @@
     }
   },
   {
-    "image": "https://i.ibb.co/zPRgLcy/penthouse.jpg",
+    "image": "https://i.ibb.co/vwMXy4c/pentahouge.jpg",
     "estate_title": "Luxury Penthouse with City Views",
-    "id": "005",
+    "id": 5,
+    "property_id": "PH001",
     "segment_name": "Penthouse",
     "description": "Live in the lap of luxury in this stunning penthouse offering breathtaking city views, high-end finishes, and top-of-the-line amenities.",
     "price": "$2,000,000",
@@ -127,7 +132,8 @@
   {
     "image": "https://i.ibb.co/L8hwDzC/twonhouse.jpg",
     "estate_title": "Gated Community Townhouse",
-    "id": "006",
+    "id": 6,
+    "property_id": "TH006",
     "segment_name": "Townhouse",
     "description": "Experience the convenience of townhouse living in this gated community. Enjoy access to communal amenities and a sense of security.",
     "price": "$800,000",
