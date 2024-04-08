@@ -8,7 +8,7 @@ import bannerImg3 from '../assets/banner3.jpg'
 export default function Banner() {
   return (
 
-    <Swiper className='z-0'  navigation={true} loop={true} modules={[Navigation]}>
+    <Swiper  navigation={true} loop={true} modules={[Navigation]}>
         <SwiperSlide>
         <img src={bannerImg1} className="w-full h-full lg:h-[600px] object-cover object-center" />
         </SwiperSlide>

@@ -1,12 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContextComponent";
 import { toast } from "react-toastify";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const { userLogin } = useContext(AuthContext);
+  const location = useLocation()
+  const Navigate = useNavigate()
+  const {user, userLogin, googleSingIn, githubSignIn } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -22,12 +24,41 @@ export default function Login() {
         reset();
       })
       .catch((error) => {
+        toast.error('Please Provide Correct email & password')
         console.log(error.message);
       });
   };
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+  // location redirect
+  useEffect(() => {
+    if(user) {
+      Navigate(location?.state || '/')
+    }
+  },[Navigate,location.state, user])
+// google sign in
+  const handleGoogleSignIn = () => {
+    googleSingIn()
+    .then((result)=>{
+      console.log(result)
+    })
+    .catch((error)=>{
+      console.log(error.message)
+    })
+
+  }
+  // github sign in
+  const handleGithubSignIn = () => {
+    githubSignIn()
+    .then((result)=>{
+      console.log(result)
+    })
+    .catch((error)=>{
+      console.log(error.message)
+    })
+
+  }
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col ">
@@ -95,6 +126,10 @@ export default function Login() {
                 Register
               </Link>{" "}
             </p>
+            <div className="flex justify-between items-center mt-3">
+              <button onClick={handleGoogleSignIn} className="btn btn-sm btn-outline btn-secondary">Google</button>
+              <button onClick={handleGithubSignIn} className="btn btn-sm btn-outline btn-primary">Github</button>
+            </div>
           </div>
         </div>
       </div>

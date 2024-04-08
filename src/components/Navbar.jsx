@@ -1,7 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import userImg from "../assets/user.png";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContextComponent";
+import { toast } from "react-toastify";
 
 export default function Navbar() {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+    .then(() => {
+      toast.success('Sign Out')
+
+    })
+    .catch((error)=> {
+      console.log(error.message)
+    })
+  }
   return (
     <div className="navbar py-5">
       <div className="navbar-start">
@@ -38,7 +52,10 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <Link to="/" className="tex-xl lg:text-3xl font-bold uppercase text-[#1a1a1a]">
+        <Link
+          to="/"
+          className="tex-xl lg:text-3xl font-bold uppercase text-[#1a1a1a]"
+        >
           Real Homes
         </Link>
       </div>
@@ -58,32 +75,45 @@ export default function Navbar() {
       </div>
       <div className="navbar-end space-x-4">
         {/* user profile */}
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex="0"
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src={userImg} />
+        {user ? (
+          <div className="flex items-center gap-4">
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex="0"
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img alt="Tailwind CSS Navbar component" src={user?.photoURL || userImg} />
+                </div>
+              </div>
+              <ul
+                tabIndex="0"
+                className="menu menu-sm dropdown-content mt-3 z-40 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a>{user?.displayName || 'user name not found'}</a>
+                </li>
+              </ul>
             </div>
+            <Link
+            onClick={handleLogOut}
+              to="/"
+              className="btn bg-[#6EC1E4] text-white text-lg font-semibold"
+            >
+              Log Out
+            </Link>
           </div>
-          <ul
-            tabIndex="0"
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+        ) : (
+          <Link
+            to="/login"
+            className="btn bg-[#6EC1E4] text-white text-lg font-semibold"
           >
-            <li>
-              <a>User name</a>
-            </li>
-          </ul>
-        </div>
+            Login
+          </Link>
+        )}
+
         {/* user profile end */}
-        <Link
-          to="/login"
-          className="btn bg-[#6EC1E4] text-white text-lg font-semibold"
-        >
-          Login
-        </Link>
       </div>
     </div>
   );

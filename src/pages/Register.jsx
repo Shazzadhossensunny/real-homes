@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
-  const { createNewUser } = useContext(AuthContext);
+  const { createNewUser, userUpdateProfile } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -14,7 +14,7 @@ export default function Register() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const { email, password } = data;
+    const { email, password, image, fullName } = data;
     if (password.length < 6) {
       return toast.error("Password should be 6 digit");
     }
@@ -25,10 +25,12 @@ export default function Register() {
     }
 
     createNewUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-        toast.success("SuccessFully Register You");
-        reset();
+      .then(() => {
+        userUpdateProfile(fullName, image)
+        .then(()=>{
+          toast.success("SuccessFully Register You");
+         reset();
+        })
       })
       .catch((error) => {
         console.log(error.message);

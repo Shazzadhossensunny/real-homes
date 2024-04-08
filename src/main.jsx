@@ -15,6 +15,7 @@ import EstateDetails from './components/EstateDetails'
 import AuthContextComponent from './Context/AuthContextComponent'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './PrivateRoute/PrivateRoute'
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
      },
      {
       path: '/estateDetails/:id',
-      element: <EstateDetails></EstateDetails>,
+      element: <PrivateRoute><EstateDetails></EstateDetails></PrivateRoute>,
       loader: () => fetch('/data.json')
 
      }
