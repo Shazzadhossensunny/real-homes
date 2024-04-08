@@ -1,6 +1,7 @@
 import Banner from "../components/Banner";
 import Estate from "../components/Estate";
 import Partner from "../components/Partner";
+import Trusted from "../components/Trusted";
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <div className="bg-[#F2F3F7]">
         <Estate></Estate>
       </div>
+      <Trusted></Trusted>
     </div>
   )
 }
