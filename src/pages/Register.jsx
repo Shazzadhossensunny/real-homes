@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContextComponent";
 import { toast } from "react-toastify";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const { createNewUser, userUpdateProfile } = useContext(AuthContext);
@@ -41,6 +42,9 @@ export default function Register() {
   };
   return (
     <div className="hero min-h-screen bg-base-200">
+      <Helmet>
+        <title>Real Homes | Register</title>
+      </Helmet>
       <div className="hero-content flex-col ">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Register now!</h1>

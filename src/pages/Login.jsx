@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContextComponent";
 import { toast } from "react-toastify";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation()
@@ -60,7 +61,11 @@ export default function Login() {
 
   }
   return (
+
     <div className="hero min-h-screen bg-base-200">
+      <Helmet>
+        <title>Real Homes | Login</title>
+      </Helmet>
       <div className="hero-content flex-col ">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>

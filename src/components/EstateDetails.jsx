@@ -7,6 +7,7 @@ import { FaShower } from "react-icons/fa6";
 import { GiHomeGarage } from "react-icons/gi";
 import { SlCalender } from "react-icons/sl";
 import { BiArea } from "react-icons/bi";
+import { Helmet } from "react-helmet-async";
 
 export default function EstateDetails() {
   const data = useLoaderData();
@@ -26,6 +27,9 @@ export default function EstateDetails() {
 
   return (
     <div className="container mx-auto">
+      <Helmet>
+        <title>Real Homes | Estate Details</title>
+      </Helmet>
       <div className="mb-12">
         <img className="w-full h-full lg:h-[550px] object-cover" src={image} alt="" />
       </div>

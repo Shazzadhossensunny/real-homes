@@ -5,7 +5,15 @@ import { AuthContext } from "../Context/AuthContextComponent";
 import { toast } from "react-toastify";
 
 export default function Navbar() {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loader } = useContext(AuthContext);
+  if(loader){
+    return (
+        <div className=" h-screen flex justify-center items-center">
+            <span className="loading loading-spinner loading-lg"></span>
+
+        </div>
+    )
+}
   const handleLogOut = () => {
     logOut()
     .then(() => {
@@ -16,6 +24,7 @@ export default function Navbar() {
       console.log(error.message)
     })
   }
+
   return (
     <div className="navbar py-5">
       <div className="navbar-start">
