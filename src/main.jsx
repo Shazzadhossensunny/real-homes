@@ -16,11 +16,13 @@ import AuthContextComponent from './Context/AuthContextComponent'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './PrivateRoute/PrivateRoute'
+import ErrorPage from './pages/ErrorPage'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
      {
       path: "/",
