@@ -1,14 +1,36 @@
 
+import { useContext } from "react"
 import { useForm} from "react-hook-form"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../Context/AuthContextComponent"
+import { toast } from "react-toastify"
 export default function Register() {
+  const {createNewUser}  = useContext(AuthContext)
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm()
   const onSubmit = (data) => {
-    console.log(data)
+    const {email, password} = data;
+    if(password.length<6){
+      return toast.error('Password should be 6 digit')
+    }
+    if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)){
+      return toast.error('Password should be one uppercase & one lowercase letter')
+    }
+
+    createNewUser (email, password)
+    .then((result) => {
+      console.log(result.user)
+      toast.success('SuccessFully Register You')
+      reset();
+    })
+    .catch((error)=>{
+      console.log(error.message)
+    })
+
   }
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -47,7 +69,7 @@ export default function Register() {
           {errors.password && <span className="text-red-500 text-sm">This field is required</span>}
         </div>
         <div className="form-control mt-6">
-          <button type="submit" className="btn btn-primary">Register</button>
+          <button type="submit" className="btn bg-[#1ea69a] text-white">Register</button>
         </div>
         </form>
 
