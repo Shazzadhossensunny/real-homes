@@ -1,10 +1,10 @@
 
 import { useForm} from "react-hook-form"
+import { Link } from "react-router-dom"
 export default function Register() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
   const onSubmit = (data) => {
@@ -17,7 +17,8 @@ export default function Register() {
       <h1 className="text-5xl font-bold">Register now!</h1>
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form  onSubmit={handleSubmit(onSubmit)} className="card-body">
+      <div   className="card-body">
+        <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
@@ -48,7 +49,10 @@ export default function Register() {
         <div className="form-control mt-6">
           <button type="submit" className="btn btn-primary">Register</button>
         </div>
-      </form>
+        </form>
+
+      <p className="text-sm">Already have an account? <Link to='/login' className="text-[#1cb2ff] hover:link-hover">Login</Link> </p>
+      </div>
     </div>
   </div>
 </div>
