@@ -55,10 +55,10 @@ const githubSignIn = () => {
 }
 
 // update user profile
-const userUpdateProfile = (name, image) =>{
+const userUpdateProfile = (name, photo) =>{
    return updateProfile(auth.currentUser, {
         displayName: name,
-        photoURL: image
+        photoURL: photo,
       })
 
 }

@@ -15,7 +15,7 @@ export default function Register() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const { email, password, fullName, image } = data;
+    const { email, password, fullName, photo } = data;
     if (password.length < 6) {
       return toast.error("Password should be 6 digit");
     }
@@ -27,7 +27,7 @@ export default function Register() {
 
     createNewUser(email, password)
       .then(() => {
-        userUpdateProfile(fullName, image)
+        userUpdateProfile(fullName, photo)
         .then(()=>{
           toast.success("SuccessFully Register You");
          reset();
