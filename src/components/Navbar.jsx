@@ -59,6 +59,11 @@ export default function Navbar() {
                 Update Profile
               </NavLink>
             </li>
+            <li className="text-xl font-semibold text-[#1a1a1a]">
+              <NavLink className="bg_active" to="/contact">
+               Contact Us
+              </NavLink>
+            </li>
           </ul>
         </div>
         <Link
@@ -80,6 +85,11 @@ export default function Navbar() {
               Update Profile
             </NavLink>
           </li>
+          <li className="text-xl font-semibold text-[#1a1a1a]">
+              <NavLink className="bg_active" to="/contact">
+               Contact Us
+              </NavLink>
+            </li>
         </ul>
       </div>
       <div className="navbar-end space-x-4">

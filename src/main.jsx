@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ErrorPage from "./pages/ErrorPage";
 import { HelmetProvider } from "react-helmet-async";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         ),
         loader: () => fetch("/data.json"),
       },
+      {
+        path: "/contact",
+        element: <PrivateRoute><Contact></Contact></PrivateRoute>
+      }
     ],
   },
 ]);
