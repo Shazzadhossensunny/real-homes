@@ -5,6 +5,7 @@ import auth from "../firebase/firebase.config"
 
 export const AuthContext = createContext(null)
 export default function AuthContextComponent({children}) {
+    const [reload, setReload] = useState(false)
     const [user, setUser] = useState(null)
     const [loader, setLoader] = useState(true)
     const googleProvider = new GoogleAuthProvider();
@@ -34,7 +35,7 @@ useEffect(()=>{
         }
      })
 
-},[])
+},[reload])
 
 // sing out
 const logOut = () => {
@@ -59,6 +60,7 @@ const userUpdateProfile = (name, photo) =>{
    return updateProfile(auth.currentUser, {
         displayName: name,
         photoURL: photo,
+
       })
 
 }
@@ -75,7 +77,7 @@ const userUpdateProfile = (name, photo) =>{
 
 
 
-    const authInfo = {user, createNewUser, userLogin, logOut, loader, googleSingIn, githubSignIn, userUpdateProfile}
+    const authInfo = {user, createNewUser, userLogin, logOut, loader, googleSingIn, githubSignIn, userUpdateProfile, setReload}
   return (
     <AuthContext.Provider value={authInfo}>
         {children}

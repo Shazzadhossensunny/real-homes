@@ -7,7 +7,7 @@ import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
-  const { createNewUser, userUpdateProfile } = useContext(AuthContext);
+  const { createNewUser, userUpdateProfile, setReload } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -30,6 +30,7 @@ export default function Register() {
         userUpdateProfile(fullName, photo)
         .then(()=>{
           toast.success("SuccessFully Register You");
+          setReload(true)
          reset();
         })
       })
