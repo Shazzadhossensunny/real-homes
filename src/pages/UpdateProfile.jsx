@@ -32,9 +32,9 @@ export default function UpdateProfile() {
   const handlePhotoURL = (e) => {
     setPhotoURL(e.target.value)
   }
-  console.log(name)
+
   return (
-    <div className="container mx-auto">
+    <div >
       <Helmet>
         <title>Real Homes | Update Profile</title>
       </Helmet>

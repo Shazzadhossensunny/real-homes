@@ -32,6 +32,7 @@ useEffect(()=>{
         setLoader(false)
         return () =>{
             unSubscribe()
+
         }
      })
 
@@ -67,7 +68,7 @@ const userUpdateProfile = (name, photo) =>{
 
 
 
-    const authInfo = {user, createNewUser, userLogin, logOut, loader, googleSingIn, githubSignIn, userUpdateProfile, setReload}
+    const authInfo = {user, createNewUser, userLogin, logOut, loader, googleSingIn, githubSignIn, userUpdateProfile, setReload, setLoader}
   return (
     <AuthContext.Provider value={authInfo}>
         {children}

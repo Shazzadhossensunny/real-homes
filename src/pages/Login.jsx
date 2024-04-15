@@ -9,7 +9,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation()
   const Navigate = useNavigate()
-  const {user, userLogin, googleSingIn, githubSignIn } = useContext(AuthContext);
+  const {user, userLogin, googleSingIn, githubSignIn, setLoader } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -19,14 +19,18 @@ export default function Login() {
   const onSubmit = (data) => {
     const { email, password } = data;
     userLogin(email, password)
+
       .then((result) => {
         console.log(result.user);
         toast.success("SuccessFully Login");
         reset();
+        // setLoader(false)
       })
       .catch((error) => {
         toast.error('Please Provide Correct email & password')
         console.log(error.message);
+        setLoader(false)
+
       });
   };
   const handleShowPassword = () => {
@@ -43,6 +47,7 @@ export default function Login() {
     googleSingIn()
     .then((result)=>{
       console.log(result)
+      toast.success("SuccessFully Login");
     })
     .catch((error)=>{
       console.log(error.message)
@@ -54,6 +59,7 @@ export default function Login() {
     githubSignIn()
     .then((result)=>{
       console.log(result)
+      toast.success("SuccessFully Login");
     })
     .catch((error)=>{
       console.log(error.message)
