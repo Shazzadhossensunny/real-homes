@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet-async";
 // import { useMap } from "react-leaflet/hooks";
 export default function Contact() {
   return (
-    <div className="bg-[#f7f7f7]">
+    <div className="bg-[#f7f7f7] p-3 lg:p-0">
         <Helmet>
             <title>Real Homes || Contact Us</title>
         </Helmet>

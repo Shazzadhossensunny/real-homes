@@ -7,9 +7,9 @@ import t6 from '../assets/t6.png'
 import t7 from '../assets/t7.png'
 export default function Trusted() {
   return (
-    <div className="my-9 lg:my-24 container mx-auto">
+    <div className="my-9 lg:my-24 container mx-auto p-3 lg:p-0">
         <h3 className="text-lg font-semibold text-center">Trusted by <span className="text-[#1db2ff] ">2000+</span> businesses</h3>
-        <div className="mt-8 flex justify-between flex-wrap">
+        <div className="mt-8 flex lg:justify-between flex-wrap gap-5">
           <img src={t1} alt="" />
           <img src={t2} alt="" />
           <img src={t3} alt="" />

@@ -11,3 +11,12 @@ li .bg_active.active {
   background-color: #0054a6 !important;
   color: white !important;
 }
+.overlay::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  right: 0;
+}
