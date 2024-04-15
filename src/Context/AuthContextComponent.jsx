@@ -67,16 +67,6 @@ const userUpdateProfile = (name, photo) =>{
 
 
 
-
-
-
-
-
-
-
-
-
-
     const authInfo = {user, createNewUser, userLogin, logOut, loader, googleSingIn, githubSignIn, userUpdateProfile, setReload}
   return (
     <AuthContext.Provider value={authInfo}>
