@@ -51,6 +51,7 @@ export default function Login() {
     })
     .catch((error)=>{
       console.log(error.message)
+      setLoader(false)
     })
 
   }
@@ -63,6 +64,7 @@ export default function Login() {
     })
     .catch((error)=>{
       console.log(error.message)
+      setLoader(false)
     })
 
   }
