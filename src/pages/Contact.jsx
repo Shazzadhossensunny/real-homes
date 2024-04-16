@@ -104,11 +104,11 @@ export default function Contact() {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[23.804693486833536, 90.41041631531532]}>
+            {/* <Marker position={[23.804693486833536, 90.41041631531532]}>
               <Popup>
                Dhaka,Bangladesh
               </Popup>
-            </Marker>
+            </Marker> */}
           </MapContainer>
         </div>
       </div>
