@@ -62,13 +62,14 @@ const userUpdateProfile = (name, photo) =>{
         displayName: name,
         photoURL: photo,
 
+
       })
 
 }
 
 
 
-    const authInfo = {user, createNewUser, userLogin, logOut, loader, googleSingIn, githubSignIn, userUpdateProfile, setReload, setLoader}
+    const authInfo = {user, createNewUser, userLogin, logOut, loader, googleSingIn, githubSignIn, userUpdateProfile, setReload, setLoader, setUser}
   return (
     <AuthContext.Provider value={authInfo}>
         {children}

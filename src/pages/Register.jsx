@@ -1,13 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContextComponent";
 import { toast } from "react-toastify";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
-  const { createNewUser, userUpdateProfile, setReload } = useContext(AuthContext);
+  const location = useLocation()
+  const Navigate = useNavigate()
+  const { createNewUser, userUpdateProfile, setReload, user } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -38,6 +40,12 @@ export default function Register() {
         console.log(error.message);
       });
   };
+  // location redirect
+  useEffect(() => {
+    if(user) {
+      Navigate(location?.state || '/')
+    }
+  },[Navigate,location.state, user])
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };

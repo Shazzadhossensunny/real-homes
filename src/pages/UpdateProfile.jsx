@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 
 export default function UpdateProfile() {
-  const {user, userUpdateProfile, setReload} = useContext(AuthContext)
+  const {user, userUpdateProfile, setUser} = useContext(AuthContext)
   const [name, setName] = useState(user?.displayName || "")
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "")
 
@@ -19,7 +19,8 @@ export default function UpdateProfile() {
     userUpdateProfile(name, photoURL)
       .then(() => {
         toast.success("SuccessFully Profile Update");
-        setReload(true)
+        setUser({ ...user, displayName: name, photoURL })
+        // setReload(true)
       })
       .catch((error) => {
         console.log(error.message);
