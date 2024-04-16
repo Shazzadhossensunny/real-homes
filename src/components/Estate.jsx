@@ -10,7 +10,7 @@ export default function Estate() {
       .then(data => setEstates(data))
     },[])
   return (
-    <div className="py-9 lg:py-24 container mx-auto p-3 lg:p-0">
+    <div className="py-9 lg:py-24 container mx-auto px-3 xl:px-0">
         <div className="text-center">
             <h2 className="text-3xl font-bold text-[#1a1a1a]">Discover Latest Properties</h2>
             <p className="text-[#808080] mt-3">Newest Properties Around You</p>

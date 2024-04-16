@@ -26,7 +26,7 @@ export default function EstateDetails() {
   } = estateDetail;
 
   return (
-    <div className="container mx-auto p-3 lg:p-0">
+    <div className="container mx-auto px-3 xl:px-0">
       <Helmet>
         <title>Real Homes | Estate Details</title>
       </Helmet>

@@ -5,7 +5,7 @@ import catImg3 from '../assets/cta-3.jpg'
 import catImg4 from '../assets/cta-4.jpg'
 export default function Partner() {
   return (
-    <div className="container mx-auto my-9 lg:my-24 p-3 lg:p-0">
+    <div className="container mx-auto my-9 lg:my-24 px-3 xl:px-0">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
             <div className="space-y-4 w-full lg:w-[48%]">
                 <h2 className="text-3xl font-bold text-[#1a1a1a]">We are your partner in creating a legacy building facade.</h2>
